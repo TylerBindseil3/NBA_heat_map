@@ -7,7 +7,7 @@ from data import player_shot_data, leaguewide_data
 from patches import Zones
 
 # Player Name first param, season is in format of '2025-26'
-shot_data = player_shot_data('Shai Gilgeous-Alexander', '2025-26')
+shot_data = player_shot_data('Anthony Edwards', '2025-26')
 
 # transforming coords to match our court
 x_cords = (shot_data['LOC_X']).to_numpy()
@@ -175,9 +175,9 @@ right_close_std_dev = sqrt(league_right_close_shot_FGP * (1 - league_right_close
 restricted_area_std_dev = sqrt(league_restricted_area_shot_FGP * (1 - league_restricted_area_shot_FGP) / len(restricted_area_shots))
 
 def check_heat(zone_fgp, zone_std_dev, league_fgp):
-    if zone_fgp - league_fgp > zone_std_dev:
+    if zone_fgp - league_fgp > 1.28 * zone_std_dev:
         return '#66FF0055'
-    elif not(zone_fgp + zone_std_dev < league_fgp): 
+    elif not(zone_fgp + (1.28 * zone_std_dev) < league_fgp): 
         return '#FFFF0055'
     else:
         return '#FF000055'
