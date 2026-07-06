@@ -81,24 +81,6 @@ ax.add_patch(Zones.right_close_heat_zone)
 ax.add_patch(Zones.middle_close_heat_zone)
 
 # Custom Cursor
-zone_labels = {
-    Zones.left_corner_heat_zone: "Left Corner",
-    Zones.right_corner_heat_zone: "Right Corner",
-    Zones.left_wing_heat_zone: "Left Wing",
-    Zones.right_wing_heat_zone: "Right Wing",
-    Zones.top_key_heat_zone: "Top of Key",
-    Zones.right_corner_mid_heat_zone: "Right Corner Mid",
-    Zones.right_mid_heat_zone: "Right Mid",
-    Zones.left_mid_heat_zone: "Left Mid",
-    Zones.left_corner_mid_heat_zone: "Left Corner Mid",
-    Zones.top_mid_heat_zone: "Top Mid",
-    Zones.restricted_area_heat_zone: "Restricted Area",
-    Zones.left_close_heat_zone: "Left Close",
-    Zones.right_close_heat_zone: "Right Close",
-    Zones.middle_close_heat_zone: "Middle Close",
-}
-
-# Custom Cursor
 def make_hover_handler(fig, ax, zone_hover_text):
     annotation = ax.annotate(
         "", xy=(0, 0), xytext=(15, 15), textcoords="offset points",
