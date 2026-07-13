@@ -2,15 +2,18 @@
 
 An interactive NBA shot chart that visualizes a player's shooting efficiency by zone compared to league average.
 
-<div align="center">
-    <img src="images/demo.png" alt="Anthony Edwards Heat Map" width="400">
-</div>
-
 ## How It Works
 
 Shot data is pulled from the NBA API using `ShotChartDetail`, which provides the x/y coordinates and outcome of every field goal attempt for a given player and season. A half-court diagram is drawn from scratch using matplotlib, with 14 custom shooting zones defined as geometric polygons. Each shot coordinate is spatially mapped to a zone using matplotlib's `Path.contains_points()` method.
 
 Zone-level shooting percentages are calculated and compared against league averages from `ShotChartLeagueWide`. For zones that don't map cleanly to a single NBA category (such as the restricted area and middle close zone), FGM and FGA are summed across the relevant rows before calculating a weighted average. Heat classification uses a binomial standard deviation model scaled to the player's shot volume in each zone, so zones with small sample sizes require a larger deviation from league average to be classified as hot or cold.
+
+## Example: Anthony Edwards Heat Map
+
+<div align="center">
+    <img src="images/demo.png" alt="Anthony Edwards Heat Map" width="400">
+</div>
+
 
 ## Running the Tool
 
