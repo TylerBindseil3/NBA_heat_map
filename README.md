@@ -2,7 +2,7 @@
 
 An interactive NBA shot chart that visualizes a player's shooting efficiency by zone compared to league average.
 
-<img src="demo.png" alt="Anthony Edwards Heat Map" width="300">
+<img src="images/demo.png" alt="Anthony Edwards Heat Map" width="300">
 
 ## How It Works
 
